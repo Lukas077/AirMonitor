@@ -148,7 +148,7 @@
 
                 <BoxView
                     BackgroundColor="#000"        
-                    HeightRequest="0.1"
+                    HeightRequest="0.5"
                     HorizontalOptions="Fill"/>
 
                 <controls:ContentPM Title="Ciśnienie">
