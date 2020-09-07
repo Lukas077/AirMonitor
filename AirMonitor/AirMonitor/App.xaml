@@ -10,105 +10,17 @@
 
     <Application.Resources>
 
-        <!-- Colors -->
+        <ResourceDictionary>
+            <!-- Add more resources here -->
+            <ResourceDictionary.MergedDictionaries>
 
-        <Color x:Key="AppBackgroundColor">#f6f6f6</Color>
-        <Color x:Key="CaqiTextColor">#206a5d</Color>
-        <Color x:Key="CaqiBackgroundColor">#bfdcae</Color>
-        <Color x:Key="SliderColor">#206a5d</Color>
-        <Color x:Key="SliderThumbColor">#1d2d50</Color>
-        <Color x:Key="PMColor">Black</Color>
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Colors.xaml" />
 
 
-
-
-
-        <!-- Implicit styles -->
-
-        <Style TargetType="ContentPage">
-            <Setter Property="BackgroundColor" Value="#f6f6f6"/>
-        </Style>
-        
-        <Style TargetType="StackLayout">
-            <Setter Property="Padding" Value="20"/>
-            <Setter Property="Spacing" Value="20"/>
-        </Style>
-        
-        <Style TargetType="Frame">
-            <Setter Property="CornerRadius" Value="80"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="HeightRequest" Value="120"/>
-            <Setter Property="WidthRequest" Value="120"/>
-            <Setter Property="BackgroundColor" Value="#bfdcae"/>
-            <Setter Property="BorderColor" Value="#206a5d"/>
-        </Style>
-        
-        <Style TargetType="Label" x:Key="LabelCenter">
-            <Setter Property="HorizontalTextAlignment" Value="Center"/>
-            <Setter Property="VerticalTextAlignment" Value="Center"/>
-        </Style>
-        
-        <Style TargetType="Label" x:Key="CaqiTitle">
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="TextColor" Value="#206a5d"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="HorizontalTextAlignment" Value="Center"/>
-        </Style>
-        
-        <Style TargetType="Label" x:Key="CaqiDesc">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="TextColor" Value="#000"/>
-            <Setter Property="HorizontalTextAlignment" Value="Center"/>
-        </Style>
-        
-        <Style TargetType="Span" x:Key="CaqiValueStyle">
-            <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="TextColor" Value="#206a5d"/>
-            <Setter Property="FontSize" Value="38"/>
-        </Style>
-        
-        <Style TargetType="Span" x:Key="CaqiUnitStyle">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="TextColor" Value="#206a5d"/>
-        </Style>
-
-        <Style TargetType="BoxView" x:Key="Vertical">
-            <Setter Property="BackgroundColor" Value="#000"/>
-            <Setter Property="HeightRequest" Value="0.5"/>
-            <Setter Property="HorizontalOptions" Value="Fill"/>
-        </Style>
-
-        <Style TargetType="Span" x:Key="PMText">
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="FontSize" Value="20"/>
-        </Style>
-
-        <Style TargetType="Span" x:Key="PMTextUnit">
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="FontSize" Value="12"/>
-        </Style>
-
-        <Style TargetType="BoxView" x:Key="Horizontal">
-            <Setter Property="VerticalOptions" Value="Fill"/>
-            <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="WidthRequest" Value="1"/>
-            <Setter Property="BackgroundColor" Value="#000"/>
-        </Style>
-
-        <Style TargetType="Slider">
-            <Setter Property="MaximumTrackColor" Value="#206a5d"/>
-            <Setter Property="MinimumTrackColor" Value="#206a5d"/>
-            <Setter Property="ThumbColor" Value="#1d2d50"/>
-        </Style>
-
-        <Style TargetType="ImageButton">
-            <Setter Property="Padding" Value="12,24"/>
-            <Setter Property="HorizontalOptions" Value="End"/>
-            <Setter Property="VerticalOptions" Value="Start"/>
-            <Setter Property="WidthRequest" Value="48"/>
-            <Setter Property="HeightRequest" Value="72"/>
-            <Setter Property="BackgroundColor" Value="Transparent"/>
-        </Style>
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Add more resources here -->
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>
