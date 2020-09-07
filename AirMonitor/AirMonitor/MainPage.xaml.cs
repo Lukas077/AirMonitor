@@ -17,5 +17,10 @@ namespace AirMonitor
         {
             InitializeComponent();
         }
+
+        private void HelpButton(object sender, EventArgs e)
+        {
+            DisplayAlert("Co to jest CAQI?", "Wspólny roczny indeks jakości powietrza stanowi ogólną ocenę sytuacji w zakresie jakości powietrza w danym mieście przez cały rok w odnieseniu do norm europejskich.", "Zamknij");
+        }
     }
 }

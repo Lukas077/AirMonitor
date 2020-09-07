@@ -3,14 +3,190 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:AirMonitor.Views.Controls"
              mc:Ignorable="d"
-             x:Class="AirMonitor.MainPage">
+             x:Class="AirMonitor.MainPage"
+             BackgroundColor="#f6f6f6">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Air Monitor" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView>
+        <Grid>
+            <StackLayout 
+                Padding="20" 
+                Spacing="20">
+                <Frame
+                    CornerRadius="80"
+                    HorizontalOptions="Center"
+                    HeightRequest="120"
+                    WidthRequest="120"
+                    BackgroundColor="#bfdcae"
+                    BorderColor="#206a5d">
+                    <Label
+                     HorizontalTextAlignment="Center"
+                     VerticalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span
+                                    Text="50"
+                                    FontAttributes="Bold"
+                                    TextColor="#206a5d"
+                                    FontSize="38"/>
+                                <Span
+                                    Text="{x:Static x:Environment.NewLine}"/>
+                                <Span
+                                    Text="CAQI"
+                                    FontSize="14"
+                                    TextColor="#206a5d"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+                <Label
+                    Text="Świetna jakość!"
+                    FontSize="20"
+                    TextColor="#206a5d"
+                    FontAttributes="Bold"
+                    HorizontalTextAlignment="Center"/>
+                <Label
+                    Text="Możesz bezpiecznie wyjść z domu bez swojej maski anty-smogowej i nie bać się o swoje zdrowie."
+                    FontSize="14"
+                    TextColor="#000"
+                    HorizontalTextAlignment="Center"/>
+                
+                <BoxView
+                    BackgroundColor="#000"        
+                    HeightRequest="0.5"
+                    HorizontalOptions="Fill"/>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <controls:ContentPM Title="PM 2.5">
+                        <controls:ContentPM.ControlContent>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                                Text="34"
+                                                TextColor="Black"
+                                                FontSize="20"/>
+                                        <Span
+                                                Text=" mg/m3 "
+                                                TextColor="Black"
+                                                FontSize="12"/>
+                                        <Span
+                                                Text="(137%)"
+                                                TextColor="Black"
+                                                FontSize="20"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </controls:ContentPM.ControlContent>
+                    </controls:ContentPM>
+                    
+
+                    <BoxView
+                        Grid.Column="1"
+                        VerticalOptions="Fill"
+                        HorizontalOptions="Center"
+                        WidthRequest="1"
+                        BackgroundColor="#000"/>
+
+                    <controls:ContentPM Title="PM 10" Grid.Column="2" >
+                        <controls:ContentPM.ControlContent>
+                            <Label HorizontalOptions="Center">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span
+                                            Text="67"
+                                            TextColor="Black"
+                                            FontSize="20"/>
+                                        <Span
+                                            Text=" mg/m3 "
+                                            TextColor="Black"
+                                            FontSize="12"/>
+                                        <Span
+                                            Text="(135%)"
+                                            TextColor="Black"
+                                            FontSize="20"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </controls:ContentPM.ControlContent>
+                    </controls:ContentPM>
+                </Grid>
+
+
+                <BoxView
+                    BackgroundColor="#000"        
+                    HeightRequest="0.5"
+                    HorizontalOptions="Fill"/>
+
+                <controls:ContentPM Title="Wilgotność">
+                    <controls:ContentPM.ControlContent>
+                        <StackLayout>
+                            <Label
+                                Text="65%"
+                                TextColor="#000"/>
+                             
+
+                                <Slider 
+                                Value="0.65"
+                                MaximumTrackColor="#206a5d"
+                                MinimumTrackColor="#1d2d50"
+                                ThumbColor="#1d2d50"/>
+                            
+                        </StackLayout>
+
+
+                    </controls:ContentPM.ControlContent>
+                </controls:ContentPM>
+                
+
+                <BoxView
+                    BackgroundColor="#000"        
+                    HeightRequest="0.1"
+                    HorizontalOptions="Fill"/>
+
+                <controls:ContentPM Title="Ciśnienie">
+                    <controls:ContentPM.ControlContent>
+                        <StackLayout>
+                            <Label
+                                Text="1000hPa"
+                                TextColor="#000"/>
+
+
+                            <Slider 
+                                Maximum="1100"
+                                Minimum="900"                          
+                                Value="1000"
+                                MaximumTrackColor="#206a5d"
+                                MinimumTrackColor="#1d2d50"
+                                ThumbColor="#1d2d50"/>
+
+                        </StackLayout>
+
+
+                    </controls:ContentPM.ControlContent>
+                </controls:ContentPM>
+
+
+            </StackLayout>
+            
+            <ImageButton
+                Padding="12,24"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="48"
+                HeightRequest="72"
+                BackgroundColor="Transparent"
+                Source="baseline_help_outline_black_18dp.png"
+                Clicked="HelpButton"/>
+
+        </Grid>
+    </ScrollView>
 
 </ContentPage>
