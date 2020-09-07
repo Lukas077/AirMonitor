@@ -136,7 +136,7 @@
                                 <Slider 
                                 Value="0.65"
                                 MaximumTrackColor="#206a5d"
-                                MinimumTrackColor="#1d2d50"
+                                MinimumTrackColor="#206a5d"
                                 ThumbColor="#1d2d50"/>
                             
                         </StackLayout>
@@ -164,7 +164,7 @@
                                 Minimum="900"                          
                                 Value="1000"
                                 MaximumTrackColor="#206a5d"
-                                MinimumTrackColor="#1d2d50"
+                                MinimumTrackColor="#206a5d"
                                 ThumbColor="#1d2d50"/>
 
                         </StackLayout>

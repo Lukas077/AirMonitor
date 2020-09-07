@@ -5,7 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AirMonitor.App">
+
+    
+
     <Application.Resources>
+
+        <!-- Colors -->
+
+        <Color x:Key="AppBackgroundColor">#f6f6f6</Color>
+        <Color x:Key="CaqiTextColor">#206a5d</Color>
+        <Color x:Key="CaqiBackgroundColor">#bfdcae</Color>
+        <Color x:Key="SliderColor">#206a5d</Color>
+        <Color x:Key="SliderThumbColor">#1d2d50</Color>
+        <Color x:Key="PMColor">Black</Color>
+
+
+
+
+
+        <!-- Implicit styles -->
+
         <Style TargetType="ContentPage">
             <Setter Property="BackgroundColor" Value="#f6f6f6"/>
         </Style>
