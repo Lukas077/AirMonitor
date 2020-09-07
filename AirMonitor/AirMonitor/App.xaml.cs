@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AirMonitor.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

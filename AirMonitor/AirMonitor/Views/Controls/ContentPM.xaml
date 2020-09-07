@@ -8,16 +8,17 @@
              x:Name="this">
 
 
-            
-
-            <Label
-                Text="{Binding Path=Title, Source={x:Reference this}}"
-                FontSize="18"
-                TextColor="#1d2d50"
-                />
-
-            <ContentView 
-                Content="{Binding Path=ControlContent, Source={x:Reference this}}"/>
+    <StackLayout.Resources>
+    <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="TextColor" Value="#1d2d50" />
+            </Style>
+    </ResourceDictionary>
+    </StackLayout.Resources>
+    
+    <Label Text="{Binding Path=Title, Source={x:Reference this}}"/>
+    <ContentView Content="{Binding Path=ControlContent, Source={x:Reference this}}"/>
 
 
 

@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:AirMonitor.Views.Controls"
              mc:Ignorable="d"
-             x:Class="AirMonitor.MainPage"
+             x:Class="AirMonitor.Views.MainPage"
              BackgroundColor="#f6f6f6">
 
     <ScrollView>
