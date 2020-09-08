@@ -7,7 +7,11 @@
              mc:Ignorable="d"
              x:Class="AirMonitor.Views.DetailsPage"
              Title="DetailsPage"
-             BackgroundColor="#f6f6f6">
+             BackgroundColor="#f6f6f6"
+             xmlns:viewModels="clr-namespace:AirMonitor.ViewModels">
+    <ContentPage.BindingContext>
+        <viewModels:DetailsViewModel/>
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <Grid>
@@ -27,7 +31,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span
-                                    Text="50"
+                                    Text="{Binding CaqiValue}"
                                     FontAttributes="Bold"
                                     TextColor="#206a5d"
                                     FontSize="38"/>
