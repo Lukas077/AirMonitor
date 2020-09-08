@@ -10,7 +10,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="Details Page" Clicked="ButtonClicked" VerticalOptions="CenterAndExpand" />
+            <Button Command="{Binding NavPage}"  Text="Details Page" VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 
