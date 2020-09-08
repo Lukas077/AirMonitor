@@ -46,13 +46,13 @@
                     </Label>
                 </Frame>
                 <Label
-                    Text="Świetna jakość!"
+                    Text="{Binding CaqiText}"
                     FontSize="20"
                     TextColor="#206a5d"
                     FontAttributes="Bold"
                     HorizontalTextAlignment="Center"/>
                 <Label
-                    Text="Możesz bezpiecznie wyjść z domu bez swojej maski anty-smogowej i nie bać się o swoje zdrowie."
+                    Text="{Binding CaqiDesc}"
                     FontSize="14"
                     TextColor="#000"
                     HorizontalTextAlignment="Center"/>
@@ -75,7 +75,7 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span
-                                                Text="34"
+                                                Text="{Binding PmValue25}"
                                                 TextColor="Black"
                                                 FontSize="20"/>
                                         <Span
@@ -83,7 +83,7 @@
                                                 TextColor="Black"
                                                 FontSize="12"/>
                                         <Span
-                                                Text="(137%)"
+                                                Text="{Binding PmPercent25}"
                                                 TextColor="Black"
                                                 FontSize="20"/>
                                     </FormattedString>
