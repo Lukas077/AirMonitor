@@ -4,12 +4,20 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace AirMonitor.ViewModels
 {
-    class DetailsViewModel : INotifyPropertyChanged
+    public class DetailsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public DetailsViewModel()
+        {
+
+        }
+
 
         int caqiValue = 50;
         public int CaqiValue
@@ -106,10 +114,11 @@ namespace AirMonitor.ViewModels
 
     }
 
-    
+
 
 
 
 
 
 }
+
