@@ -8,10 +8,19 @@
              x:Class="AirMonitor.Views.DetailsPage"
              Title="DetailsPage"
              BackgroundColor="#f6f6f6"
-             xmlns:viewModels="clr-namespace:AirMonitor.ViewModels">
+             xmlns:viewModels="clr-namespace:AirMonitor.ViewModels"
+             xmlns:converters="clr-namespace:AirMonitor.Converters">
+    
     <ContentPage.BindingContext>
         <viewModels:DetailsViewModel/>
     </ContentPage.BindingContext>
+ 
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DoubleToIntConverter x:Key="DoubleToInt"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ScrollView>
         <Grid>
@@ -83,7 +92,7 @@
                                                 TextColor="Black"
                                                 FontSize="12"/>
                                         <Span
-                                                Text="{Binding PmPercent25}"
+                                                Text="{Binding PmPercent25, StringFormat='{0}%'}"
                                                 TextColor="Black"
                                                 FontSize="20"/>
                                     </FormattedString>
@@ -106,7 +115,7 @@
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span
-                                            Text="67"
+                                            Text="{Binding PmValue10}"
                                             TextColor="Black"
                                             FontSize="20"/>
                                         <Span
@@ -114,7 +123,7 @@
                                             TextColor="Black"
                                             FontSize="12"/>
                                         <Span
-                                            Text="(135%)"
+                                            Text="{Binding PmPercent10, StringFormat='{0}%'}"
                                             TextColor="Black"
                                             FontSize="20"/>
                                     </FormattedString>
@@ -134,12 +143,12 @@
                     <controls:ContentPM.ControlContent>
                         <StackLayout>
                             <Label
-                                Text="65%"
-                                TextColor="#000"/>
+                                Text="{Binding Humidity, Converter={StaticResource DoubleToInt}, StringFormat='{0} %'}"
+                                TextColor="#000"/> 
                              
 
                                 <Slider 
-                                Value="0.65"
+                                Value="{Binding Humidity}"
                                 MaximumTrackColor="#206a5d"
                                 MinimumTrackColor="#206a5d"
                                 ThumbColor="#1d2d50"/>
@@ -160,7 +169,7 @@
                     <controls:ContentPM.ControlContent>
                         <StackLayout>
                             <Label
-                                Text="1000hPa"
+                                Text="{Binding Pressure, StringFormat='{0} hPa'}"
                                 TextColor="#000"/>
 
 
