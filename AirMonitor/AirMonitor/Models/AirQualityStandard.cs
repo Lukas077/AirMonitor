@@ -1,11 +1,14 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AirMonitor.Models
 {
-    class AirQualityStandard
+    public class AirQualityStandard
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Pollutant { get; set; }
         public double Limit { get; set; }

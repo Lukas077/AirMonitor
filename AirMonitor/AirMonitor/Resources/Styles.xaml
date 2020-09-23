@@ -3,16 +3,16 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Style TargetType="ContentPage">
+    <Style TargetType="ContentPage" x:Key="DetailsPage">
         <Setter Property="BackgroundColor" Value="#f6f6f6"/>
     </Style>
 
-    <Style TargetType="StackLayout">
+    <Style TargetType="StackLayout" x:Key="DetailsPageC">
         <Setter Property="Padding" Value="20"/>
         <Setter Property="Spacing" Value="20"/>
     </Style>
 
-    <Style TargetType="Frame">
+    <Style TargetType="Frame" x:Key="CaqiFrame">
         <Setter Property="CornerRadius" Value="80"/>
         <Setter Property="HorizontalOptions" Value="Center"/>
         <Setter Property="HeightRequest" Value="120"/>
@@ -73,13 +73,14 @@
         <Setter Property="BackgroundColor" Value="#000"/>
     </Style>
 
-    <Style TargetType="Slider">
+                        
+    <Style TargetType="Slider" x:Key="Slider">
         <Setter Property="MaximumTrackColor" Value="#206a5d"/>
         <Setter Property="MinimumTrackColor" Value="#206a5d"/>
         <Setter Property="ThumbColor" Value="#1d2d50"/>
     </Style>
 
-    <Style TargetType="ImageButton">
+    <Style TargetType="ImageButton" x:Key="ImageButton">
         <Setter Property="Padding" Value="12,24"/>
         <Setter Property="HorizontalOptions" Value="End"/>
         <Setter Property="VerticalOptions" Value="Start"/>

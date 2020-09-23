@@ -9,7 +9,8 @@
              Title="DetailsPage"
              BackgroundColor="#f6f6f6"
              xmlns:viewModels="clr-namespace:AirMonitor.ViewModels"
-             xmlns:converters="clr-namespace:AirMonitor.Converters">
+             xmlns:converters="clr-namespace:AirMonitor.Converters"
+             Style="{StaticResource DetailsPage}">
     
     <ContentPage.BindingContext>
         <viewModels:DetailsViewModel/>
@@ -24,52 +25,31 @@
 
     <ScrollView>
         <Grid>
-            <StackLayout 
-                Padding="20" 
-                Spacing="20">
-                <Frame
-                    CornerRadius="80"
-                    HorizontalOptions="Center"
-                    HeightRequest="120"
-                    WidthRequest="120"
-                    BackgroundColor="#bfdcae"
-                    BorderColor="#206a5d">
-                    <Label
-                     HorizontalTextAlignment="Center"
-                     VerticalTextAlignment="Center">
+            <StackLayout Style="{StaticResource DetailsPageC}">
+                <Frame Style="{StaticResource CaqiFrame}">
+                    <Label Style="{StaticResource LabelCenter}">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span
                                     Text="{Binding CaqiValue}"
-                                    FontAttributes="Bold"
-                                    TextColor="#206a5d"
-                                    FontSize="38"/>
+                                    Style="{StaticResource CaqiValueStyle}"/>
                                 <Span
                                     Text="{x:Static x:Environment.NewLine}"/>
                                 <Span
                                     Text="CAQI"
-                                    FontSize="14"
-                                    TextColor="#206a5d"/>
+                                    Style="{StaticResource CaqiUnitStyle}"/>
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
                 </Frame>
                 <Label
                     Text="{Binding CaqiText}"
-                    FontSize="20"
-                    TextColor="#206a5d"
-                    FontAttributes="Bold"
-                    HorizontalTextAlignment="Center"/>
+                    Style="{StaticResource CaqiTitle}"/>
                 <Label
                     Text="{Binding CaqiDesc}"
-                    FontSize="14"
-                    TextColor="#000"
-                    HorizontalTextAlignment="Center"/>
-                
-                <BoxView
-                    BackgroundColor="#000"        
-                    HeightRequest="0.5"
-                    HorizontalOptions="Fill"/>
+                    Style="{StaticResource CaqiDesc}"/>
+
+                <BoxView Style="{StaticResource Vertical}"/>
                 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -85,29 +65,23 @@
                                     <FormattedString>
                                         <Span
                                                 Text="{Binding PmValue25}"
-                                                TextColor="Black"
-                                                FontSize="20"/>
+                                                Style="{StaticResource PMText}"/>
                                         <Span
                                                 Text=" mg/m3 "
-                                                TextColor="Black"
-                                                FontSize="12"/>
+                                                Style="{StaticResource PMTextUnit}"/>
                                         <Span
                                                 Text="{Binding PmPercent25, StringFormat='{0}%'}"
-                                                TextColor="Black"
-                                                FontSize="20"/>
+                                                Style="{StaticResource PMText}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
                         </controls:ContentPM.ControlContent>
                     </controls:ContentPM>
-                    
 
-                    <BoxView
+
+                    <BoxView 
                         Grid.Column="1"
-                        VerticalOptions="Fill"
-                        HorizontalOptions="Center"
-                        WidthRequest="1"
-                        BackgroundColor="#000"/>
+                        Style="{StaticResource Horizontal}"/>
 
                     <controls:ContentPM Title="PM 10" Grid.Column="2" >
                         <controls:ContentPM.ControlContent>
@@ -116,16 +90,13 @@
                                     <FormattedString>
                                         <Span
                                             Text="{Binding PmValue10}"
-                                            TextColor="Black"
-                                            FontSize="20"/>
+                                            Style="{StaticResource PMText}"/>
                                         <Span
                                             Text=" mg/m3 "
-                                            TextColor="Black"
-                                            FontSize="12"/>
+                                            Style="{StaticResource PMTextUnit}"/>
                                         <Span
                                             Text="{Binding PmPercent10, StringFormat='{0}%'}"
-                                            TextColor="Black"
-                                            FontSize="20"/>
+                                            Style="{StaticResource PMText}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
@@ -134,10 +105,7 @@
                 </Grid>
 
 
-                <BoxView
-                    BackgroundColor="#000"        
-                    HeightRequest="0.5"
-                    HorizontalOptions="Fill"/>
+                <BoxView Style="{StaticResource Vertical}"/>
 
                 <controls:ContentPM Title="Wilgotność">
                     <controls:ContentPM.ControlContent>
@@ -158,12 +126,10 @@
 
                     </controls:ContentPM.ControlContent>
                 </controls:ContentPM>
-                
 
-                <BoxView
-                    BackgroundColor="#000"        
-                    HeightRequest="0.5"
-                    HorizontalOptions="Fill"/>
+
+                <BoxView Style="{StaticResource Vertical}"/>
+
 
                 <controls:ContentPM Title="Ciśnienie">
                     <controls:ContentPM.ControlContent>
@@ -176,10 +142,8 @@
                             <Slider 
                                 Maximum="1100"
                                 Minimum="900"                          
-                                Value="1000"
-                                MaximumTrackColor="#206a5d"
-                                MinimumTrackColor="#206a5d"
-                                ThumbColor="#1d2d50"/>
+                                Value="{Binding Pressure}"
+                                Style="{StaticResource Slider}"/>
 
                         </StackLayout>
 
@@ -189,14 +153,9 @@
 
 
             </StackLayout>
-            
-            <ImageButton
-                Padding="12,24"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="48"
-                HeightRequest="72"
-                BackgroundColor="Transparent"
+
+            <ImageButton 
+                Style="{StaticResource ImageButton}"
                 Source="baseline_help_outline_black_18dp.png"
                 Clicked="HelpButton"/>
 
