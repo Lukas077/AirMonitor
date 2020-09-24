@@ -77,8 +77,18 @@ namespace AirMonitor.ViewModels
         private ICommand _goToDetailsCommand;
         public ICommand GoToDetailsCommand => _goToDetailsCommand ?? (_goToDetailsCommand = new Command<Measurement>(OnGoToDetails));
 
+        
         private void OnGoToDetails(Measurement item)
         {
+            this.navigation.PushAsync(new DetailsPage(item));
+        }
+
+        private ICommand _infoWindowClickedCommand;
+        public ICommand InfoWindowClickedCommand => _infoWindowClickedCommand ?? (_infoWindowClickedCommand = new Command<string>(OnInfoWindowClickedCommand));
+
+        private void OnInfoWindowClickedCommand(string address)
+        {
+            var item = Items.FirstOrDefault(s => s.Installation.Address.Description.Equals(address));
             this.navigation.PushAsync(new DetailsPage(item));
         }
 
@@ -102,12 +112,7 @@ namespace AirMonitor.ViewModels
             set => SetProperty(ref _items, value);
         }
 
-        private List<MapLocation> _locations;
-        public List<MapLocation> Locations
-        {
-            get => _locations;
-            set => SetProperty(ref _locations, value);
-        }
+      
 
         private bool _isBusy;
         public bool IsBusy
@@ -123,7 +128,12 @@ namespace AirMonitor.ViewModels
             set => SetProperty(ref _isRefreshing, value);
         }
 
-
+        private List<MapLocation> _locations;
+        public List<MapLocation> Locations
+        {
+            get => _locations;
+            set => SetProperty(ref _locations, value);
+        }
         private async Task<IEnumerable<Installation>> GetInstallations(Location location, bool forceRefresh, double maxDistanceInKm = 50, int maxResults = -1)
         {
             if (location == null)
@@ -141,8 +151,8 @@ namespace AirMonitor.ViewModels
 
                     var query = GetQuery(new Dictionary<string, object>
                 {
-                    { "lat", 52.173421 }, // na sztywno location.Latitude 52.173421
-                    { "lng", 20.997043 }, // na sztywno location.Longitude 20.997043
+                    { "lat", location.Latitude }, // na sztywno location.Latitude 52.173421
+                    { "lng", location.Longitude }, // na sztywno location.Longitude 20.997043
                     { "maxDistanceKM", maxDistanceInKm },
                     { "maxResults", maxResults }
                 });
@@ -216,42 +226,6 @@ namespace AirMonitor.ViewModels
 
             return measurements;
         }
-
-        /* ------------------Moje--------------------
-        async Task<Location> GetLocalization()
-        {
-            Location location = await Geolocation.GetLastKnownLocationAsync();
-
-            if (location == null)
-            {
-                var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-                location = await Geolocation.GetLocationAsync(request);
-            }
-
-            if (location != null)
-            {
-                Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}");
-            }
-
-            return location;
-        }
-
-
-
-
-
-        private ICommand _NavPage;
-        public ICommand NavPage => _NavPage ?? (_NavPage = new Command(NavPages));
-
-
-
-        private void NavPages()
-        {
-            this.navigation.PushAsync(new DetailsPage());
-        }
-        */
-
-
 
         private bool ShouldUpdateData(IEnumerable<Measurement> savedMeasurements)
         {

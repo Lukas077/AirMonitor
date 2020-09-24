@@ -8,30 +8,6 @@
              xmlns:models="clr-namespace:AirMonitor.Models"
              Title="HomePage">
 
-
-   <!--/> <ContentPage.Content>
-        <StackLayout>
-            <Button Command="{Binding NavPage}"  Text="Details Page" VerticalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-
-
-    <Grid>
-        <ListView ItemsSource="{Binding Items}" 
-                  ItemTapped="ListView_ItemTapped" 
-                  SelectionMode="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Nearest.Address.Description}"
-                              Detail="{Binding CurrentDisplayValue, StringFormat='CAQI: {0}'}"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HorizontalOptions="Center" VerticalOptions="Center"/>
-    </Grid>
-
--->
-
     <Grid>
         <ListView ItemsSource="{Binding Items}"
                   ItemTapped="ListView_ItemTapped"

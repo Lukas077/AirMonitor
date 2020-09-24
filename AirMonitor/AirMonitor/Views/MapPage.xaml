@@ -5,16 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              mc:Ignorable="d"
-             x:Class="AirMonitor.Views.MapPage">
-    <ContentPage.Content>
-        <maps:Map x:Name="map" 
-                  IsShowingUser="True"
-                  ItemsSource="{Binding Locations}" >
-            <maps:Map.ItemTemplate>
-                <DataTemplate>
-                    <maps:Pin Position="{Binding Position}" Address="{Binding Address}" Label="{Binding Description}" />
-                </DataTemplate>
-            </maps:Map.ItemTemplate>
-        </maps:Map> 
-    </ContentPage.Content>
+             x:Class="AirMonitor.Views.MapPage"
+             Title="Map">
+    <maps:Map x:Name="map" IsShowingUser="True" ItemsSource="{Binding Locations}" >
+        <maps:Map.ItemTemplate>
+            <DataTemplate>
+                <maps:Pin Position="{Binding Position}" Address="{Binding Address}" Label="{Binding Description}" InfoWindowClicked="InfoWindow_ItemTapped" />
+            </DataTemplate>
+        </maps:Map.ItemTemplate>
+    </maps:Map>
 </ContentPage>
