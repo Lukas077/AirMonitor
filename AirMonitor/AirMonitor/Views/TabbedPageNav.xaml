@@ -24,4 +24,11 @@
 
     </NavigationPage>
 
+    <NavigationPage Title="Map Page" IconImageSource="outline_location_on_black_18dp.png">
+        <x:Arguments>
+            <local:MapPage/>
+        </x:Arguments>
+
+    </NavigationPage>
+
 </TabbedPage>
